@@ -251,6 +251,7 @@ export interface CalendarWeekViewBeforeRenderEvent extends WeekView {
               [hourSegments]="hourSegments"
               [hourSegmentHeight]="hourSegmentHeight"
               [customTemplate]="currentTimeMarkerTemplate"
+              [viewDate]="viewDate"
             ></mwl-calendar-week-view-current-time-marker>
             <div class="cal-events-container">
               <div

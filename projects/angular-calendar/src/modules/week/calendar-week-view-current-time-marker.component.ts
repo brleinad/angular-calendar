@@ -61,6 +61,8 @@ export class CalendarWeekViewCurrentTimeMarkerComponent implements OnChanges {
 
   @Input() customTemplate: TemplateRef<any>;
 
+  @Input() viewDate: Date;
+
   columnDate$ = new BehaviorSubject<Date>(this.columnDate);
 
   marker$: Observable<{
@@ -81,7 +83,7 @@ export class CalendarWeekViewCurrentTimeMarkerComponent implements OnChanges {
       );
       const hourHeightModifier =
         (this.hourSegments * this.hourSegmentHeight) / 60;
-      const now = new Date();
+      const now = this.viewDate;
       return {
         isVisible:
           this.dateAdapter.isSameDay(columnDate, now) &&
